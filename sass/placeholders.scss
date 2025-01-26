@@ -1,0 +1,28 @@
+/**************************
+In the SASS file you will have this
+//placeholder selectors
+.fred %other{
+    position: relative;
+    transform: rotate(30deg);
+}
+.wilma{
+    @extend %other;
+}
+%thing{
+    background-color: pink;
+    border: 3px dashed olive;
+}
+footer p{
+    @extend %thing;
+}
+//which will compile to the following CSS ---
+***************************/
+
+.fred .wilma{
+    position: relative;
+    transform: rotate(30deg);
+}
+footer p{
+    background-color: pink;
+    border: 3px dashed olive;
+}

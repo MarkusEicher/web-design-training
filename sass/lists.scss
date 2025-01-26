@@ -1,0 +1,57 @@
+@import "vars", "defaults", "functions", "colors";  
+/*************************************
+SASS Lists
+$list: 'bob','fred','simon','tony'
+$list: 'bob' 'fred' 'simon' 'tony'
+$list: bob fred simon tony
+methods:
+length($list)
+nth($list, 2)
+index($list, 'fred')
+join($list, $list2)
+append($list, 'steve')
+@each { }
+*************************************/
+
+$pages: 'home','products','service','contact';
+//<body id="contact"><nav><ul><li class="home"><a href="#">Home
+//<li class="products"><a href="#">Products
+//<li class="service"><a href="#">Services
+//<li class="contact"><a href="#">Contact Us
+
+@each $pg in $pages{
+    body##{$pg} li.#{$pg} a{
+        font-weight: 900;
+        background-color: gold;
+    }
+}
+
+
+
+#bubba li.bubba a,
+#fred li.fred a{
+    //both the body id and the li class must match
+}
+
+
+
+
+h1{
+    color: $color;
+    font-size: double($lg);
+}
+main>p{
+    color: $color;
+    font: {
+        family: $serif;
+        size: $md;
+    }
+}
+footer p a{
+    color: $grey;
+    font-size: 0.9rem;
+}
+
+.warn{
+    color: $bad;
+}

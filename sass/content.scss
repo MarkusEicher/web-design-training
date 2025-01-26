@@ -1,0 +1,43 @@
+@import "vars", "defaults", "functions";
+
+// @content directive
+
+$c: cornflowerblue;
+$bw: #ddd;
+
+@mixin clr($c: red ){
+    border: 1px solid $c;
+    @content; 
+    //from the curly braces
+}
+
+.colour{
+    @include clr(rebeccapurple) {
+        background-color: $c;
+        border-color: $bw;
+    };
+}
+
+.black-white{
+    @include clr;
+}
+
+h1{
+    color: $color;
+    font-size: double($lg);
+}
+main>p{
+    color: $color;
+    font: {
+        family: $serif;
+        size: $md;
+    }
+}
+footer p a{
+    color: $grey;
+    font-size: 0.9rem;
+}
+
+.warn{
+    color: $bad;
+}

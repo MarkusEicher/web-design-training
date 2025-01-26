@@ -1,0 +1,26 @@
+@import "_vars";  // or "_vars.scss" or "_vars"
+//multiple imports with commas between the names are allowed
+// EG:   "vars", "defaults", "bubba"
+
+//CSS Import
+@import url("other.css");   // starts with http://
+
+h1{
+    color: $color;
+    font-size: $lg;
+}
+main>p{
+    color: $color;
+    font: {
+        family: $serif;
+        size: 1.3rem;
+    }
+}
+footer p a{
+    color: $grey;
+    font-size: 0.9rem;
+}
+
+.warn{
+    color: $bad;
+}
