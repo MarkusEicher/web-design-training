@@ -5,19 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:sass": "sass  --no-source-map src/sass:public/css",
-    "copy:html": "copyfiles -u 1 ./src/*.html public",
-    "copy:images": "copyfiles -u 1 ./src/images/**/* public",
-    "copy:legacycss": "copyfiles -u 1 ./src/*.css public",
+    "build:sass": "sass  --no-source-map src/sass:docs/css",
+    "copy:html": "copyfiles -u 1 ./src/*.html docs",
+    "copy:images": "copyfiles -u 1 ./src/images/**/* docs",
+    "copy:legacycss": "copyfiles -u 1 ./src/*.css docs",
     "copy": "npm-run-all --parallel copy:*",
     "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
     "watch:images": "onchange \"src/images/**/*\" -- npm run copy:images",
-    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:sass": "sass  --no-source-map --watch src/sass:docs/css",
     "watch": "npm-run-all --parallel watch:*",
-    "serve": "browser-sync start --server public --files public",
+    "serve": "browser-sync start --server docs --files docs",
     "start": "npm-run-all copy --parallel watch serve",
     "build": "npm-run-all copy:html build:*",
-    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map" 
+    "postbuild": "postcss docs/css/*.css -u autoprefixer cssnano -r --no-map" 
   },
   "repository": {
     "type": "git",
