@@ -1,0 +1,20 @@
+.intro > p {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transition: opacity 0.5s, transform 0.4s;
+  transition: opacity 0.5s, transform 0.4s;
+  color: #bada55;
+}
+
+p.leave {
+  opacity: 0;
+  transform: scale(0);
+}
+
+p.arrive {
+  opacity: 1;
+  transform: scale(1);
+}
