@@ -8,7 +8,6 @@
     "build:sass": "sass  --no-source-map src/sass:docs/css",
     "copy:html": "copyfiles -u 1 ./src/*.html docs",
     "copy:images": "copyfiles -u 1 ./src/images/**/* docs",
-    "copy:legacycss": "copyfiles -u 1 ./src/*.css docs",
     "copy:cname": "copyfiles -u 1 ./src/CNAME docs",
     "copy": "npm-run-all --parallel copy:*",
     "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
