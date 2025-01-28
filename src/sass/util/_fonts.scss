@@ -1,0 +1,33 @@
+// _fonts.scss
+$OpenSans-Regular-woff2: url("../../fonts/OpenSans-Regular.woff2");
+$OpenSans-Regular-woff: url("../../fonts/OpenSans-Regular.woff");
+
+$OpenSans-Regular-font: (
+  'font-family': 'OpenSans-Regular',
+  'font-weight': normal,
+  'src': (
+    local('OpenSans-Regular'), 
+    $OpenSans-Regular-woff2 format('woff2'), 
+    $OpenSans-Regular-woff format('woff') 
+  )
+);
+
+$OpenSans-SemiBold-woff2: url("../../fonts/OpenSans-SemiBold.woff2");
+$OpenSans-SemiBold-woff: url("../../fonts/OpenSans-SemiBold.woff");
+
+$OpenSans-SemiBold-font: (
+  'font-family': 'OpenSans-SemiBold',
+  'font-weight': normal,
+  'src': (
+    local('OpenSans-SemiBold'), 
+    $OpenSans-SemiBold-woff2 format('woff2'), 
+    $OpenSans-SemiBold-woff format('woff') 
+  )
+);
+
+// Create a map to store all font definitions
+$all-fonts: (
+  'open-sans-regular': $OpenSans-Regular-font,
+  'open-sans-semibold': $OpenSans-SemiBold-font,
+  // ... other font names: their respective font data maps
+);

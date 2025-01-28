@@ -1,3 +1,36 @@
+// @use 'sass:map';
+// @use '../util/fonts' as *;
+
+// @font-face {
+//   @each $key, $value in util.$OpenSans-Regular-font {
+//     #{$key}: $value;
+//   }
+// }
+// $Open-Sans-regular: map.get(util.$OpenSans-Regular-font, 'font-family' );
+// $Open-Sans-SemiBold: map.get(util.$OpenSans-SemiBold-font, 'font-family' );
+
+@use 'sass:map';
+@use '../util/fonts' as *;
+
+@each $font-name, $font-data in $all-fonts {
+  @font-face {
+    @each $key, $value in $font-data {
+      #{$key}: $value;
+    }
+  }
+}
+
+// Create a map to store font family names
+$font-families: (); 
+
+@each $font-name, $font-data in $all-fonts {
+  $font-families: map.merge(
+    $font-families,
+    ($font-name: map.get($font-data, 'font-family'))
+  );
+}
+  
+
 h1, h2, h3 {
     font-weight: 700;
     line-height: 1.1;
@@ -10,4 +43,8 @@ p {
 
 a, a:visited, a:active {
     text-decoration: none;
+}
+
+.intro>p {
+  font-family: map-get($font-families, 'open-sans-semibold');
 }

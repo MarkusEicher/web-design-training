@@ -1,18 +1,13 @@
-html {
-  box-sizing: border-box;
-  font-size: 100%;
+@font-face {
+  font-family: "OpenSans-Regular";
+  font-weight: normal;
+  src: local("OpenSans-Regular"), url("../../fonts/OpenSans-Regular.woff2") format("woff2"), url("../../fonts/OpenSans-Regular.woff") format("woff");
 }
-
-*, *::before, *::after {
-  box-sizing: inherit;
+@font-face {
+  font-family: "OpenSans-SemiBold";
+  font-weight: normal;
+  src: local("OpenSans-SemiBold"), url("../../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../../fonts/OpenSans-SemiBold.woff") format("woff");
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 h1, h2, h3 {
   font-weight: 700;
   line-height: 1.1;
@@ -27,6 +22,39 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
+.intro > p {
+  font-family: "OpenSans-SemiBold";
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--defBackground);
+  color: var(--defTextColor);
+}
+
+nav {
+  background-color: var(--defNavBackground);
+}
+
+:root {
+  --defBackground: lightgray;
+  --defNavBackground: Darkgray;
+  --navBgColorLight: darkgreen;
+  --navBgColorDark: lightgreen;
+  --defTextColor: black;
+}
+
 /* :root{ */
 /* --white: #fff; */
 /* --toggleDarkBg: #232841; */
@@ -39,11 +67,6 @@ a, a:visited, a:active {
 /* inset 0 -5px 15px rgba(255, 255, 255, 0.4); */
 /* color-scheme:  dark light; */
 /* } */
-:root {
-  --navBgColorLight: darkgreen;
-  --navBgColorDark: lightgreen;
-}
-
 /* * {
     margin: 0;
     padding: 0;
